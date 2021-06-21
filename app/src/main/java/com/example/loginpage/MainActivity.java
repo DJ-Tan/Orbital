@@ -2,6 +2,7 @@ package com.example.loginpage;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -10,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -19,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private DrawerLayout drawer;
     int userid;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,32 +37,47 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new HomeFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_home);
-        }
-
         // Retrieve id from Login Activity
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             userid = extras.getInt("userid");
+            username = extras.getString("username");
         }
 
+        Bundle homeBundle = new Bundle();
+        homeBundle.putString("username", username);
+        if (savedInstanceState == null) {
+            HomeFragment homeFragment = new HomeFragment();
+            homeFragment.setArguments(homeBundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    homeFragment).commit();
+            navigationView.setCheckedItem(R.id.nav_home);
+        }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Bundle b = new Bundle();
-        b.putInt("userid", userid);
+
+        Bundle homeBundle = new Bundle();
+        homeBundle.putString("username", username);
+
+        Bundle profileBundle = new Bundle();
+        profileBundle.putInt("userid", userid);
+        profileBundle.putString("username", username);
+
         if (item.getItemId() == R.id.nav_home) {
+            HomeFragment homeFragment = new HomeFragment();
+            homeFragment.setArguments(homeBundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new HomeFragment()).commit();
+                    homeFragment).commit();
         } else if (item.getItemId() == R.id.nav_profile) {
             ProfileFragment profileFragment = new ProfileFragment();
-            profileFragment.setArguments(b);
+            profileFragment.setArguments(profileBundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     profileFragment).commit();
+        } else if (item.getItemId() == R.id.nav_pill) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new SettingsFragment()).commit();
         } else if (item.getItemId() == R.id.nav_settings) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new SettingsFragment()).commit();

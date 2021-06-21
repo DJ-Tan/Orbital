@@ -67,9 +67,12 @@ public class LoginActivity extends AppCompatActivity {
                                 passError.setError(getResources().getString(R.string.error_invalid_password));
                             } else {
                                 Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
-                                int userid = Integer.parseInt(result.trim());
+                                String[] words = result.split("#");
+                                int userid = Integer.parseInt(words[0].trim());
+                                String username = words[1] + " " + words[2];
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 intent.putExtra("userid", userid);
+                                intent.putExtra("username", username);
                                 startActivity(intent);
                                 finish();
                             }
@@ -108,5 +111,6 @@ public class LoginActivity extends AppCompatActivity {
 
         return isEmailValid && isPasswordValid;
     }
+
 
 }
