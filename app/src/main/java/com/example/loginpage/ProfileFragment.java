@@ -22,7 +22,6 @@ public class ProfileFragment extends Fragment {
 
     int userid;
     String username, gender, bloodtype, allergy;
-    int wait = 0;
     TextView textUsername, noEditGender, noEditBlood;
     EditText editAllergy;
     Spinner spinGender, spinBlood;
@@ -67,9 +66,7 @@ public class ProfileFragment extends Fragment {
         spinGender.setAdapter(adapterGender);
 
         // Set on click listener for edit button
-        edit.setOnClickListener(v -> {
-            toggleEdit(true);
-        });
+        edit.setOnClickListener(v -> toggleEdit(true));
 
         // Set on click listener for confirm button (update details on SQL server)
         confirm.setOnClickListener(v -> {
@@ -130,6 +127,8 @@ public class ProfileFragment extends Fragment {
                         allergy = words[2];
                         noEditGender.setText(gender);
                         noEditBlood.setText(bloodtype);
+                        spinGender.setSelection(adapterGender.getPosition(gender));
+                        spinBlood.setSelection(adapterBlood.getPosition(bloodtype));
                         editAllergy.setText(allergy);
                     }
                 }
@@ -161,5 +160,7 @@ public class ProfileFragment extends Fragment {
             confirm.setVisibility(View.GONE);
         }
     }
+
+
 
 }

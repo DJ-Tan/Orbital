@@ -1,11 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/profile_gradient">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Settings Fragment" />
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="Settings"/>
 
-</RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/setting_openPass"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/menu_dropdown"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:text="Password Change"
+                tools:ignore="RtlHardcoded" />
+
+            <LinearLayout
+                android:id="@+id/setting_passChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/setting_oldPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/allergy_border"
+                    android:hint="Old Password"
+                    android:maxLength="15"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:singleLine="true"
+                    tools:ignore="RtlSymmetry" />
+
+                <EditText
+                    android:id="@+id/setting_newPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/allergy_border"
+                    android:hint="New Password"
+                    android:maxLength="15"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:singleLine="true"
+                    tools:ignore="RtlSymmetry" />
+
+                <EditText
+                    android:id="@+id/setting_retypePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/allergy_border"
+                    android:hint="Retype Password"
+                    android:maxLength="15"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:singleLine="true"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/setting_passError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#FF0000" />
+
+                <Button
+                    android:id="@+id/setting_confirmPass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/button_gradient"
+                    android:layout_gravity="center"
+                    android:text="Confirm"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

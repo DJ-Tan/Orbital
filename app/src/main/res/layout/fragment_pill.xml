@@ -1,11 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/profile_gradient">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/ps_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pill Fragment" />
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="Pill Storage"/>
 
-</RelativeLayout>
+    <ScrollView
+        android:id="@+id/ps_storage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/ps_pill1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#F5FCFF"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:text="    Pill 1:"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/ps_pill2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#DBF3FA"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:text="    Pill 2:"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/ps_pill3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#B7E9F7"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:text="    Pill 3:"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/ps_pill4"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#92DFF3"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:text="    Pill 4:"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/ps_pill5"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#7AD7F0"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:text="    Pill 5:"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/ps_pill6"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#4FCEE7"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:text="    Pill 6:"
+                tools:ignore="RtlHardcoded" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/ps_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Name:"/>
+
+                <EditText
+                    android:id="@+id/ps_pillEditName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7sp"
+                    android:paddingStart="3dp"
+                    android:background="@drawable/allergy_border"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/ps_nameError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="50dp"
+                android:textColor="#FF0000"
+                android:text="@string/error_name_blank"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Colour:"/>
+
+                <Button
+                    android:id="@+id/ps_colour0"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="7sp"
+                    android:background="@drawable/colour0" />
+
+                <Button
+                    android:id="@+id/ps_colour1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="7sp"
+                    android:background="@drawable/colour1" />
+
+                <Button
+                    android:id="@+id/ps_colour2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="7sp"
+                    android:background="@drawable/colour2" />
+
+                <Button
+                    android:id="@+id/ps_colour3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="7sp"
+                    android:background="@drawable/colour3" />
+
+                <Button
+                    android:id="@+id/ps_colour4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="7sp"
+                    android:background="@drawable/colour4" />
+
+                <Button
+                    android:id="@+id/ps_colour5"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="7sp"
+                    android:background="@drawable/colour5" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:text="Shape:"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ps_shapeTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/ps_shape0"
+                            android:layout_width="83dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/pill00" />
+
+                        <Button
+                            android:id="@+id/ps_shape1"
+                            android:layout_width="60dp"
+                            android:layout_height="39.7dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/pill10" />
+
+                        <Button
+                            android:id="@+id/ps_shape2"
+                            android:layout_width="58.5dp"
+                            android:layout_height="49dp"
+                            android:layout_marginStart="10sp"
+                            android:background="@drawable/pill20" />
+
+                        <Button
+                            android:id="@+id/ps_shape3"
+                            android:layout_width="60dp"
+                            android:layout_height="36.2dp"
+                            android:layout_marginStart="10sp"
+                            android:background="@drawable/pill30" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ps_shapeBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/ps_shape4"
+                            android:layout_width="75dp"
+                            android:layout_height="44.2dp"
+                            android:layout_marginStart="10sp"
+                            android:background="@drawable/pill40" />
+
+                        <Button
+                            android:id="@+id/ps_shape5"
+                            android:layout_width="74.1dp"
+                            android:layout_height="39.4dp"
+                            android:layout_marginStart="10sp"
+                            android:background="@drawable/pill50" />
+
+                        <Button
+                            android:id="@+id/ps_shape6"
+                            android:layout_width="50.6dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="12sp"
+                            android:background="@drawable/pill60" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/ps_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_gradient"
+                android:text="  Confirm and Return  "/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>
+

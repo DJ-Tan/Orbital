@@ -65,6 +65,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         profileBundle.putInt("userid", userid);
         profileBundle.putString("username", username);
 
+        Bundle pillBundle = new Bundle();
+        pillBundle.putInt("userid", userid);
+
+        Bundle settingsBundle = new Bundle();
+        settingsBundle.putInt("userid", userid);
+
         if (item.getItemId() == R.id.nav_home) {
             HomeFragment homeFragment = new HomeFragment();
             homeFragment.setArguments(homeBundle);
@@ -76,11 +82,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     profileFragment).commit();
         } else if (item.getItemId() == R.id.nav_pill) {
+            PillFragment pillFragment = new PillFragment();
+            pillFragment.setArguments(pillBundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new SettingsFragment()).commit();
+                    pillFragment).commit();
         } else if (item.getItemId() == R.id.nav_settings) {
+            SettingsFragment settingsFragment = new SettingsFragment();
+            settingsFragment.setArguments(settingsBundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new SettingsFragment()).commit();
+                    settingsFragment).commit();
         } else if (item.getItemId() == R.id.nav_logout) {
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);

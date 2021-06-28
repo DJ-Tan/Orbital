@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TextInputLayout</string>
+    <string name="app_name">PillBot</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="prompt_password_retype">Retype Password</string>
@@ -15,12 +15,16 @@
     <string name="email_error">Please enter your email address</string>
     <string name="error_invalid_email">The email address may be invalid</string>
     <string name="password_error">Please enter a password</string>
-    <string name="error_invalid_password">The password entered may be incorrect.</string>
+    <string name="error_blank">All fields must be filled in</string>
+    <string name="error_matchDB">Old password entered is incorrect</string>
+    <string name="error_old_new_match">Please enter another new password</string>
+    <string name="error_invalid_password">The password entered may be incorrect</string>
     <string name="error_length">Please enter a minimum password of 8 characters</string>
     <string name="error_uppercase">Please enter a password with uppercase characters</string>
     <string name="error_lowercase">Please enter a password with lowercase characters</string>
     <string name="error_digit">Please enter a password with numeric values</string>
     <string name="error_symbol">Please enter a password with symbols</string>
+    <string name="error_name_blank">Name field may not be left blank</string>
     <string name="match_error">Passwords do not match</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
@@ -36,8 +40,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
+
     // Dropdown menu for Blood Group
     <string-array name="blood_group_array">
+        <item>NIL</item>
         <item>A+</item>
         <item>A-</item>
         <item>B+</item>
@@ -50,6 +56,7 @@
 
     // Dropdown menu for Gender
     <string-array name="gender_array">
+        <item>NIL</item>
         <item>Male</item>
         <item>Female</item>
     </string-array>
