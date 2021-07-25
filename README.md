@@ -15,13 +15,13 @@
         <li>
           <a href="#activties-and-fragments">Activties and Fragments</a>
           <ul>
-            <li><a href="#login-activity">Dependencies</a></li>
-            <li><a href="#register-activity">Dependencies</a></li>
-            <li><a href="#main-activity">Dependencies</a></li>
-            <li><a href="#profile-fragment">Dependencies</a></li>
-            <li><a href="#pill-fragment">Dependencies</a></li>
-            <li><a href="#schedule-fragment">Dependencies</a></li>
-            <li><a href="#settings-fragment">Dependencies</a></li>
+            <li><a href="#login-activity">Login Activity</a></li>
+            <li><a href="#register-activity">Register Activity</a></li>
+            <li><a href="#main-activity">Main Activity</a></li>
+            <li><a href="#profile-fragment">Profile Fragment</a></li>
+            <li><a href="#pill-fragment">Pill Fragment</a></li>
+            <li><a href="#schedule-fragment">Schedule Fragment</a></li>
+            <li><a href="#settings-fragment">Setting Fragment</a></li>
           </ul>
         </li>
       </ul>
