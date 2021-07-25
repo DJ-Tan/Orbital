@@ -7,7 +7,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
-    android:background="@drawable/profile_gradient">
+    android:background="@drawable/pill_background">
 
     <RelativeLayout
         android:layout_width="match_parent"

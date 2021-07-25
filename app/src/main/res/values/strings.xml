@@ -38,8 +38,12 @@
     <string name="nav_title">PillBot</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-
+    <string name="schedule">Schedule</string>
+    <string name="timeFlex_explanation">"Time flexibility" allows the user to choose between having a
+        single dispense timing shared across all pills, or separate timings for each pill.</string>
+    <string name="flexEnable">"Time flexibility" is currently disabled. Enable to allow separate timings for each pill.</string>
+    <string name="flexDisable">"Time flexibility" is currently enabled. Disable to share dispense timings across all pills.</string>
+    <string name="flexDisable_warning">Warning: By clicking disable, all dispense times will be changed to the above time settings</string>
 
     // Dropdown menu for Blood Group
     <string-array name="blood_group_array">

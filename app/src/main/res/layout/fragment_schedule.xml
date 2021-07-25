@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/pill_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="Schedule"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/schedule_storage1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/menu_dropdown"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:text="Storage 1: "
+                android:textSize="20sp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/schedule_storage2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/menu_dropdown"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:text="Storage 2: "
+                android:textSize="20sp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/schedule_storage3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/menu_dropdown"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:text="Storage 3: "
+                android:textSize="20sp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/schedule_storage4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/menu_dropdown"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:text="Storage 4: "
+                android:textSize="20sp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/schedule_storage5"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/menu_dropdown"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:text="Storage 5: "
+                android:textSize="20sp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/schedule_storage6"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/menu_dropdown"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:text="Storage 6: "
+                android:textSize="20sp"
+                tools:ignore="RtlHardcoded" />
+
+            <LinearLayout
+                android:id="@+id/schedule_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Dosage Information"
+                    android:textStyle="bold"
+                    android:paddingBottom="10dp"/>
+
+                <LinearLayout
+                    android:id="@+id/schedule_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:text="Days:   "/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/schedule_monday"
+                                android:layout_width="60dp"
+                                android:layout_height="40dp"
+                                android:text="Mon"
+                                android:background="@drawable/bttn_release"/>
+
+                            <Button
+                                android:id="@+id/schedule_tuesday"
+                                android:layout_width="60dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:text="Tue"
+                                android:background="@drawable/bttn_release"/>
+
+                            <Button
+                                android:id="@+id/schedule_wednesday"
+                                android:layout_width="60dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:text="Wed"
+                                android:background="@drawable/bttn_release"/>
+
+                            <Button
+                                android:id="@+id/schedule_thursday"
+                                android:layout_width="60dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:text="Thu"
+                                android:background="@drawable/bttn_release"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/schedule_friday"
+                                android:layout_width="60dp"
+                                android:layout_height="40dp"
+                                android:text="Fri"
+                                android:background="@drawable/bttn_release"/>
+
+                            <Button
+                                android:id="@+id/schedule_saturday"
+                                android:layout_width="60dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:text="Sat"
+                                android:background="@drawable/bttn_release"/>
+
+                            <Button
+                                android:id="@+id/schedule_sunday"
+                                android:layout_width="60dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:text="Sun"
+                                android:background="@drawable/bttn_release"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="Qty: "
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                    <EditText
+                        android:id="@+id/schedule_quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="20sp"
+                        android:text="0"/>
+
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/schedule_morning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Morning:      "
+                            android:textSize="20sp"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
+                            android:id="@+id/schedule_mornTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/schedule_mornHour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:textSize="20sp"
+                                android:text="00"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text=" : "/>
+
+                            <EditText
+                                android:id="@+id/schedule_mornMinute"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:textSize="20sp"
+                                android:text="00"/>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/schedule_mornAdd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/button_gradient"
+                            android:text="Add"/>
+
+                        <Button
+                            android:id="@+id/schedule_mornRemove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/button_gradient"
+                            android:layout_marginStart="10dp"
+                            android:text="Remove"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/schedule_afternoon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Afternoon:   "
+                            android:textSize="20sp"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
+                            android:id="@+id/schedule_afternoonTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/schedule_afternoonHour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:textSize="20sp"
+                                android:text="00"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text=" : "/>
+
+                            <EditText
+                                android:id="@+id/schedule_afternoonMinute"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:textSize="20sp"
+                                android:text="00"/>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/schedule_afternoonAdd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/button_gradient"
+                            android:text="Add"/>
+
+                        <Button
+                            android:id="@+id/schedule_afternoonRemove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/button_gradient"
+                            android:layout_marginStart="10dp"
+                            android:text="Remove"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/schedule_evening"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Evening:       "
+                            android:textSize="20sp"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
+                            android:id="@+id/schedule_eveningTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/schedule_eveningHour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:textSize="20sp"
+                                android:text="00"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text=" : "/>
+
+                            <EditText
+                                android:id="@+id/schedule_eveningMinute"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:textSize="20sp"
+                                android:text="00"/>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/schedule_eveningAdd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/button_gradient"
+                            android:text="Add"/>
+
+                        <Button
+                            android:id="@+id/schedule_eveningRemove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/button_gradient"
+                            android:layout_marginStart="10dp"
+                            android:text="Remove"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/schedule_night"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Night:            "
+                            android:textSize="20sp"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
+                            android:id="@+id/schedule_nightTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/schedule_nightHour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:textSize="20sp"
+                                android:text="00"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text=" : "/>
+
+                            <EditText
+                                android:id="@+id/schedule_nightMinute"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:textSize="20sp"
+                                android:text="00"/>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/schedule_nightAdd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/button_gradient"
+                            android:text="Add"/>
+
+                        <Button
+                            android:id="@+id/schedule_nightRemove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/button_gradient"
+                            android:layout_marginStart="10dp"
+                            android:text="Remove"/>
+
+                    </LinearLayout>
+                    
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/schedule_confirm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:text=" Confirm Changes "
+                        android:background="@drawable/button_gradient"/>
+
+                    <Button
+                        android:id="@+id/schedule_return"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:text=" Return without saving "
+                        android:background="@drawable/button_gradient"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

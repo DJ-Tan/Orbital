@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Bundle pillBundle = new Bundle();
         pillBundle.putInt("userid", userid);
 
+        Bundle scheduleBundle = new Bundle();
+        scheduleBundle.putInt("userid", userid);
+
         Bundle settingsBundle = new Bundle();
         settingsBundle.putInt("userid", userid);
 
@@ -86,6 +89,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             pillFragment.setArguments(pillBundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     pillFragment).commit();
+        } else if (item.getItemId() == R.id.nav_schedule) {
+            ScheduleFragment scheduleFragment = new ScheduleFragment();
+            scheduleFragment.setArguments(scheduleBundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    scheduleFragment).commit();
         } else if (item.getItemId() == R.id.nav_settings) {
             SettingsFragment settingsFragment = new SettingsFragment();
             settingsFragment.setArguments(settingsBundle);

@@ -8,7 +8,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
-    android:background="@drawable/profile_gradient">
+    android:background="@drawable/pill_background">
 
     <TextView
         android:id="@+id/ps_title"
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -135,6 +135,29 @@
                     android:layout_marginStart="7sp"
                     android:paddingStart="3dp"
                     android:background="@drawable/allergy_border"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Quantity:"/>
+
+                <EditText
+                    android:id="@+id/ps_pillEditQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7sp"
+                    android:paddingStart="3dp"
+                    android:inputType="numberDecimal"
                     tools:ignore="RtlSymmetry" />
 
             </LinearLayout>
@@ -292,21 +315,33 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/ps_confirm"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/button_gradient"
-                android:text="  Confirm and Return  "/>
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/ps_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_gradient"
+                    android:text="  Confirm and Return  "/>
+
+                <Button
+                    android:id="@+id/ps_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/button_gradient"
+                    android:text="  Reset storage  "/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
-
-
-
 
 </LinearLayout>
 

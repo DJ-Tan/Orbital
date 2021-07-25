@@ -88,7 +88,7 @@ public class ProfileFragment extends Fragment {
                     data[1] = spinGender.getSelectedItem().toString();
                     data[2] = spinBlood.getSelectedItem().toString();
                     data[3] = editAllergy.getText().toString();
-                    PutData putData = new PutData("http://192.168.50.13/LoginRegister/updatePersonal.php", "POST", field, data);
+                    PutData putData = new PutData("https://orbital-cygnus.herokuapp.com/updatePersonal.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             allergyError.setError(null);
@@ -114,7 +114,7 @@ public class ProfileFragment extends Fragment {
             field[0] = "id";
             String[] data = new String[1];
             data[0] = Integer.toString(userid);
-            PutData putData = new PutData("http://192.168.50.13/LoginRegister/retrievePersonal.php", "POST", field, data);
+            PutData putData = new PutData("https://orbital-cygnus.herokuapp.com/retrievePersonal.php", "POST", field, data);
             if (putData.startPut()) {
                 if (putData.onComplete()) {
                     String result = putData.getResult();

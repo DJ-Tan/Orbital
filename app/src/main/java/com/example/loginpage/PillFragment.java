@@ -22,9 +22,9 @@ public class PillFragment extends Fragment {
     Boolean colourAll = true, shapeAll = true;
     ScrollView storageView, customView;
     TextView title, nameError;
-    EditText pillEditName;
+    EditText pillEditName, pillEditQuantity;
     LinearLayout shapeTop, shapeBottom;
-    Button confirmReturn;
+    Button confirmReturn, clearStorage;
     Button pill_1, pill_2, pill_3, pill_4, pill_5, pill_6;
     Button colour_0, colour_1, colour_2, colour_3, colour_4, colour_5;
     Button shape_0, shape_1, shape_2, shape_3, shape_4, shape_5, shape_6;
@@ -44,10 +44,12 @@ public class PillFragment extends Fragment {
         title = view.findViewById(R.id.ps_title);
         nameError = view.findViewById(R.id.ps_nameError);
         pillEditName = view.findViewById(R.id.ps_pillEditName);
+        pillEditQuantity = view.findViewById(R.id.ps_pillEditQuantity);
         shapeTop = view.findViewById(R.id.ps_shapeTop);
         shapeBottom = view.findViewById(R.id.ps_shapeBottom);
 
         confirmReturn = view.findViewById(R.id.ps_confirm);
+        clearStorage = view.findViewById(R.id.ps_clear);
 
         pill_1 = view.findViewById(R.id.ps_pill1);
         pill_2 = view.findViewById(R.id.ps_pill2);
@@ -238,6 +240,9 @@ public class PillFragment extends Fragment {
             }
         });
 
+        // Button to clear storage
+        clearStorage.setOnClickListener(v -> clearStorageContainer());
+
         ////////////////////////////////////////////////////////////////////////////////////////////
         // Query SQL database for pill names if any
 
@@ -247,7 +252,7 @@ public class PillFragment extends Fragment {
             field[0] = "id";
             String[] data = new String[1];
             data[0] = Integer.toString(userid);
-            PutData putData = new PutData("http://192.168.50.13/LoginRegister/pillName.php", "POST", field, data);
+            PutData putData = new PutData("https://orbital-cygnus.herokuapp.com/pillName.php", "POST", field, data);
             if (putData.startPut()) {
                 if (putData.onComplete()) {
                     String result = putData.getResult();
@@ -276,19 +281,21 @@ public class PillFragment extends Fragment {
     {
         Handler handler = new Handler();
         handler.post(() -> {
-            String[] field = new String[5];
+            String[] field = new String[6];
             field[0] = "id";
             field[1] = "container";
             field[2] = "name";
-            field[3] = "colour";
-            field[4] = "shape";
-            String[] data = new String[5];
+            field[3] = "quantity";
+            field[4] = "colour";
+            field[5] = "shape";
+            String[] data = new String[6];
             data[0] = Integer.toString(userid);
             data[1] = Integer.toString(pill_num);
             data[2] = pillEditName.getText().toString();
-            data[3] = Integer.toString(pillColour_num);
-            data[4] = Integer.toString(pillShape_num);
-            PutData putData = new PutData("http://192.168.50.13/LoginRegister/updatePillDetails.php", "POST", field, data);
+            data[3] = pillEditQuantity.getText().toString();
+            data[4] = Integer.toString(pillColour_num);
+            data[5] = Integer.toString(pillShape_num);
+            PutData putData = new PutData("https://orbital-cygnus.herokuapp.com/updatePillDetails.php", "POST", field, data);
             if (putData.startPut()) {
                 if (putData.onComplete()) {
                     String result = putData.getResult();
@@ -310,34 +317,25 @@ public class PillFragment extends Fragment {
             String[] data = new String[2];
             data[0] = Integer.toString(userid);
             data[1] = Integer.toString(pill_num);
-            PutData putData = new PutData("http://192.168.50.13/LoginRegister/pillDetails.php", "POST", field, data);
+            PutData putData = new PutData("https://orbital-cygnus.herokuapp.com/pillDetails.php", "POST", field, data);
             if (putData.startPut()) {
                 if (putData.onComplete()) {
                     String result = putData.getResult();
                     String[] words = result.split("#");
                     pillEditName.setText(words[0]);
-                    pillColour_num = Integer.parseInt(words[1]);
-                    pillShape_num = Integer.parseInt(words[2]);
+                    pillEditQuantity.setText(words[1]);
+                    pillColour_num = Integer.parseInt(words[2]);
+                    pillShape_num = Integer.parseInt(words[3]);
                     toggleColour(pillColour_num);
                     toggleShapeView(pillShape_num);
                     if (pillColour_num == -1 || pillShape_num == -1) {
                         confirmReturn.setVisibility(View.GONE);
                     }
-                    if (pillColour_num == -1) {
-                        colourAll = true;
-                    } else {
-                        colourAll = false;
-                    }
-                    if (pillShape_num == -1) {
-                        shapeAll = true;
-                    } else {
-                        shapeAll = false;
-                    }
+                    colourAll = pillColour_num == -1;
+                    shapeAll = pillShape_num == -1;
                 }
             }
         });
-
-
     }
 
     // True: Edit view / False: Storage View
@@ -464,7 +462,8 @@ public class PillFragment extends Fragment {
     }
 
     // Toggles view of the shape colour
-    void toggleShapeColour(int pill_colour) {
+    void toggleShapeColour(int pill_colour)
+    {
         if (pill_colour == 0) {
             shape_0.setBackgroundResource(R.drawable.pill00);
             shape_1.setBackgroundResource(R.drawable.pill10);
@@ -554,6 +553,35 @@ public class PillFragment extends Fragment {
             pillName_6 = "  Storage 6: " + medicine;
             pill_6.setText(pillName_6);
         }
+    }
+
+    void clearStorageContainer()
+    {
+        Handler handler = new Handler();
+        handler.post(() -> {
+            String[] field = new String[2];
+            field[0] = "id";
+            field[1] = "container";
+            String[] data = new String[2];
+            data[0] = Integer.toString(userid);
+            data[1] = Integer.toString(pill_num);
+            PutData putData = new PutData("https://orbital-cygnus.herokuapp.com/clearContainer.php", "POST", field, data);
+            if (putData.startPut()) {
+                if (putData.onComplete()) {
+                    String result = putData.getResult();
+                    String response;
+                    if (result.equals("Cleared Successfully")) {
+                        response = "Storage " + data[1] + " successfully cleared";
+                        pillEditName.setText("NIL");
+                        updatePillStorageName(pill_num);
+                        toggleView(false);
+                    } else {
+                        response = "Failed to clear storage " + data[1];
+                    }
+                    Toast.makeText(getActivity(), response, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
 }
