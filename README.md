@@ -12,7 +12,18 @@
       <a href="#project-details">Project Details</a>
       <ul>
         <li><a href="#dependencies">Dependencies</a></li>
-        <li><a href="#activties-and-fragments">Activties and Fragments</a></li>
+        <li>
+          <a href="#activties-and-fragments">Activties and Fragments</a>
+          <ul>
+            <li><a href="#login-activity">Dependencies</a></li>
+            <li><a href="#register-activity">Dependencies</a></li>
+            <li><a href="#main-activity">Dependencies</a></li>
+            <li><a href="#profile-fragment">Dependencies</a></li>
+            <li><a href="#pill-fragment">Dependencies</a></li>
+            <li><a href="#schedule-fragment">Dependencies</a></li>
+            <li><a href="#settings-fragment">Dependencies</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ol>
@@ -52,52 +63,56 @@ The purpose of each dependency is as follows:
 
 ### Activities and Fragments
 
-<u>Login Activity</u>
+#### Login Activity
 * Uses a email-password login combination
 * Basic error checking
-* 'Remember Me' option (to be added)
 
-![Login Page](https://user-images.githubusercontent.com/65007534/120193486-137b8880-c24f-11eb-942e-15e22a54df0a.png)
+![Login Page](https://user-images.githubusercontent.com/65007534/126902499-78cebc9e-0b32-4bec-9abd-8ff78f13541d.png)
 
-<u>Register Activity</u>
+#### Register Activity
 * Sign up page for new users
 * Basic check for valid password and email
-* Email confirmation upon registration (to be added)
 
-![Register Page](https://user-images.githubusercontent.com/65007534/120193575-2c843980-c24f-11eb-9c95-cbd5371b8f04.png)
+![Register Page](https://user-images.githubusercontent.com/65007534/126902571-d8f6be59-b7ae-4925-81ca-b7391d76d10f.png)
 
-<u>Main Activity</u>
-* Displays pending dispensing notifications (to be added)
+#### Main Activity
 * Side bar menu to navigate to other windows
-* Home/Profile/Settings Fragments
+* Home/Profile/Pill/Schedule/Settings Fragments
 * Log-out feature that returns user to login screen
 
-![Sidebar Menu](https://user-images.githubusercontent.com/65007534/123634630-45333f80-d84d-11eb-989f-8875dcdd1ba9.png)
+![Sidebar Menu](https://user-images.githubusercontent.com/65007534/126902616-32c2cd5a-89e1-476c-bb22-2bf4943642ca.png)
 
-<u>Profile Fragment</u>
+#### Profile Fragment
 * Displays basic information of the user
 * To be used under user sharing
 
-![Profile Menu](https://user-images.githubusercontent.com/65007534/123635997-eb337980-d84e-11eb-98d3-abd226a4dd1e.png)
+![Profile Page](https://user-images.githubusercontent.com/65007534/126902650-59c30e8b-a3ad-4dc8-b662-f5f929a1bd9f.png)
 
-<u>Pill Fragment</u>
+#### Pill Fragment
 * Starts out on a pill storage screen with 6 containers
 * CLick on any container to open up the pill edit screen
 * Comes with 6 colours and 7 shapes
+* Clear container option
 
-![Pill Storage](https://user-images.githubusercontent.com/65007534/123635052-c25eb480-d84d-11eb-8eaa-12848cbd61ac.png)
-![Pill Edit](https://user-images.githubusercontent.com/65007534/123635105-d9050b80-d84d-11eb-8cc9-7f5ec4d32e03.png)
+![Pill Storage](https://user-images.githubusercontent.com/65007534/126902700-36558206-c1d2-41bb-ae3e-d7548d15eb7a.png)
+![Pill Edit](https://user-images.githubusercontent.com/65007534/126902703-7afad576-dae9-4a25-a7dd-4b7c4898aa7e.png)
+ 
+#### Schedule Fragment
+* Schedule dispense day, quantity and time for the pills
+* Caters for both flexible and non-flexible time (see settings)
 
-<u>Setting Fragment</u>
-* Change Password
+![Pill Scheduler](https://user-images.githubusercontent.com/65007534/126902769-2fd23324-c0fa-40d0-923b-7bdc2198efac.png)
 
-![Setting Fragment](https://user-images.githubusercontent.com/65007534/123635608-72342200-d84e-11eb-855a-4d573cf818f3.png)
+#### Settings Fragment
+* Change password
+* Change time flexibility
+
+![Settings Page](https://user-images.githubusercontent.com/65007534/126902785-4ede6210-cf4b-45f1-8ed7-2779256bd3ac.png)
 
 
-<u>Features yet to be implemented</u>
-* Ability to make and update basic profile settings
-* Enable/Disable notifications
-* Scheduler
-* Password change
-* Sharing ID to allow family members and doctor's access
+<u>Future Improvements</u>
+* "Remember Me" option for ease of login
+* Registration confirmation by email address
+* Important notifications on home screen (exp: Pills running low, expiring pills)
+* User sharing to allow family members and doctor's access to base level information
 * Feedback system
